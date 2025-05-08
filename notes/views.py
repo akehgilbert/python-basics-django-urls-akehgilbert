@@ -62,7 +62,7 @@ def search_notes(request, search_term):
     if not matching_notes:
         return HttpResponse(f"No notes found for '{search_term}'.")
 
-    notes_html = ''.join(f'<li>{note["text"]} (Section: {note["section"]})</li>' for note in matching_notes)
+    notes_html = ''.join(f'<li>{note["text"]} (Section: {note["section"]})</li>' for note in matching_notes) # noqa
     back_to_sections = reverse('notes:sections')
 
     html = f"""

@@ -20,7 +20,7 @@ def todo_detail(request, todo_id):
     if todo_id < 1 or todo_id > len(todos):
         raise Http404("To-Do not found")
 
-    todo = todos[todo_id - 1]  
+    todo = todos[todo_id - 1]
     text = todo['text']
     topic = todo['topic']
     status = todo['status']
